@@ -33,10 +33,10 @@ export class CategoryFormComponent implements OnInit {
   ngOnInit() {
     this.setCurrentAction();
     this.buildCategoryForm();
-    this.loadCategory();
+    // this.loadCategory(id);
   }
 
-  private setCurrentAction(): string {
+  private setCurrentAction() {
     if (this.route.snapshot.url[0].path === 'new') {
       this.currentAction = 'new';
     } else {

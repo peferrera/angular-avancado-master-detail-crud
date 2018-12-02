@@ -47,13 +47,13 @@ export class CategoryService {
     );
   }
 
-  update(category: Category): Observable<Category> {
-    const url = `${this.apiPath}/${id}`;
-    return this.http.put(this.apiPath, category).pipe(
-      catchError(this.handleError),
-      map(this.jsonDataToCategory)
-    );
-  }
+  // update(category: Category): Observable<Category> {
+  //   const url = `${this.apiPath}/${id}`;
+  //   return this.http.put(this.apiPath, category).pipe(
+  //     catchError(this.handleError),
+  //     map(this.jsonDataToCategory)
+  //   );
+  // }
 
 
   private jsonDataToCategories(jsonData: any[]) {
