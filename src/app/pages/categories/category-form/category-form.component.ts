@@ -106,7 +106,7 @@ export class CategoryFormComponent implements OnInit, AfterContentChecked {
     this.categoryService.update(category)
       .subscribe(
         category => this.actionsForSuccess(category),
-        error => this.actionsForErrors(error)
+        error => this.actionsForError(error)
       );
   }
 
@@ -118,7 +118,7 @@ export class CategoryFormComponent implements OnInit, AfterContentChecked {
     );
   }
 
-  private actionsForErrors(error) {
+  private actionsForError(error) {
     toastr.error('Ocorreu um erro ao processar a sua solicitacao');
     this.submittingForm = false;
 
