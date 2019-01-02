@@ -34,7 +34,7 @@ export class CategoryService {
   create(category: Category): Observable<Category> {
     return this.http.post(this.apiPath, category).pipe(
       catchError(this.handleError),
-      map(() => category)
+      map(this.jsonDataToCategory)
     );
   }
 
@@ -48,19 +48,18 @@ export class CategoryService {
   }
 
   update(category: Category): Observable<Category> {
-    const url = `${this.apiPath}/${id}`;
-    return this.http.put(this.apiPath, category).pipe(
+    const url = `${this.apiPath}/${category.id}`;
+
+    return this.http.put(url, category).pipe(
       catchError(this.handleError),
-      map(this.jsonDataToCategory)
+      map(() => category)
     );
   }
 
 
-  private jsonDataToCategories(jsonData: any[]) {
+  private jsonDataToCategories(jsonData: any[]): Category[] {
     const categories: Category[] = [];
-    jsonData.forEach(element => {
-      return categories.push(element as Category);
-    });
+    jsonData.forEach(element => categories.push(element as Category));
     return categories;
   }
 
