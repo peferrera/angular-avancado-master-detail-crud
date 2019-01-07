@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InMemoryDatabase } from './pages/categories/in-memory-database';
+import { InMemoryDatabase } from './in-memory-database';
 import { CategoryService } from './pages/categories/shared/category.service';
 
 @NgModule({

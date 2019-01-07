@@ -4,6 +4,10 @@ import { EntryListComponent } from './entry-list/entries-list.component';
 
 const routes: Routes = [
   {
+    path: '',
+    component: EntryListComponent
+  }
+  {
     path: 'new',
     component: EntryListComponent
   },
