@@ -78,7 +78,6 @@ export class CategoryFormComponent implements OnInit, AfterContentChecked {
             this.categoryForm.patchValue(category); // binds loaded category data to categoryform
           },
           (error) => alert('Ocorrreu um erro no servidor, tente mais tarde'));
-      )
     }
   }
 
@@ -106,7 +105,7 @@ export class CategoryFormComponent implements OnInit, AfterContentChecked {
     this.categoryService.update(category)
       .subscribe(
         category => this.actionsForSuccess(category),
-        error => this.actionsForError(error)
+        error => this.actionsForErrors(error)
       );
   }
 
@@ -118,7 +117,7 @@ export class CategoryFormComponent implements OnInit, AfterContentChecked {
     );
   }
 
-  private actionsForError(error) {
+  private actionsForErrors(error) {
     toastr.error('Ocorreu um erro ao processar a sua solicitacao');
     this.submittingForm = false;
 
