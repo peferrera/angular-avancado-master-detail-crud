@@ -1,10 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { map, catchError, flatMap } from 'rxjs/operators';
-
+import { catchError, map } from 'rxjs/operators';
 import { Category } from './category.model';
-import { element } from '@angular/core/src/render3';
+
 
 @Injectable({
   providedIn: 'root'
